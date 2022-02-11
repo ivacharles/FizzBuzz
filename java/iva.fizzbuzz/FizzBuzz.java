@@ -1,16 +1,23 @@
+import java.util.Arrays;
+
 public class FizzBuzz {
     public static void main(String[] args) {
-        int numbers = 30;
-        for (int i = 1; i <= numbers; i++) {
+        int numbers = 3;
+        System.out.println(Arrays.asList(run(numbers)));
+    }
+    public static String [] run(int number){
+        String [] result = new String[number];
+        for (int i = 1; i <= number; i++) {
             if ((i % 3 == 0) && (i % 5 == 0)) {
-                System.out.println("FizzBuzz");
+                result[i-1] = "FizzBuzz";
             } else if (i % 5 == 0) {
-                System.out.println("Buzz");
+                result[i-1] = "Buzz";
             } else if (i % 3 == 0) {
-                System.out.println("Fizz");
+                result[i-1] = "Fizz";
             } else {
-                System.out.println(i);
+                result[i-1] = i+"";
             }
         }
+        return result;
     }
 }
